@@ -1,0 +1,146 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 15% 8%;
+    --foreground: 240 5% 96%;
+
+    --card: 240 15% 9%;
+    --card-foreground: 240 5% 96%;
+
+    --popover: 240 15% 9%;
+    --popover-foreground: 240 5% 96%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 13%;
+    --secondary-foreground: 240 5% 96%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-raven-dark text-foreground;
+  }
+
+  .h1 {
+    @apply text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl;
+  }
+
+  .h2 {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+  }
+
+  .h3 {
+    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+  }
+
+  .h4 {
+    @apply text-xl font-bold tracking-tight sm:text-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-imshubs-primary via-imshubs-coral to-imshubs-gold bg-clip-text text-transparent;
+  }
+  
+  .gradient-text-warm {
+    @apply bg-gradient-to-r from-imshubs-gold via-imshubs-orange to-imshubs-coral bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    padding: 1px;
+    background: linear-gradient(135deg, #8B5CF6, #F59E0B, #EA580C);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  .purple-glow {
+    position: relative;
+  }
+  
+  .purple-glow::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    bottom: -50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(245, 158, 11, 0.1) 40%, rgba(234, 88, 12, 0) 70%);
+    filter: blur(40px);
+    z-index: -1;
+  }
+  
+  .warm-glow {
+    position: relative;
+  }
+  
+  .warm-glow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(234, 88, 12, 0.1) 30%, rgba(139, 92, 246, 0.05) 60%, transparent 80%);
+    filter: blur(30px);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #14151f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B5CF6 0%, #F59E0B 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #C4B5FD 0%, #FED7AA 100%);
+}
